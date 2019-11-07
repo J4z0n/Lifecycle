@@ -9,10 +9,20 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
-        android:id="@+id/stats"
+        android:textSize="12pt"
+        android:id="@+id/local"
         app:layout_constraintBottom_toTopOf="@id/resetLocal"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/sharedPrefs"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12pt"
+        android:id="@+id/sharedPrefs"
+        app:layout_constraintBottom_toTopOf="@id/resetSharedPrefs"
+        app:layout_constraintLeft_toRightOf="@id/local"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,8 +30,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/resetLocal"
-        android:text="@string/app_name"
-        app:layout_constraintTop_toBottomOf="@id/stats"
+        android:text="@string/reset_local"
+        android:onClick="resetLocal"
+        app:layout_constraintTop_toBottomOf="@id/local"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/resetSharedPrefs"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -31,8 +42,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/resetSharedPrefs"
-        android:text="@string/app_name"
-        app:layout_constraintTop_toBottomOf="@id/stats"
+        android:text="@string/reset_all"
+        android:onClick="resetAll"
+        app:layout_constraintTop_toBottomOf="@id/sharedPrefs"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@id/resetLocal"
         app:layout_constraintBottom_toBottomOf="parent"
